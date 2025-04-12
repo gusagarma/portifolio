@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portifolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    .futuristic-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff55;
+}
+
+.experience-card {
+  background-color: #1e1e1e;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+  filter: blur(8px);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 14px;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-card:hover {
+  transform: scale(1.05) perspective(1000px) rotateX(2deg) rotateY(2deg);
+  box-shadow: 0 0 20px #00ffff88, 0 0 40px #ff00ff44;
+  border: 2px solid #00ffff55;
+}
+
+.experience-card img {
+  position: relative;
+  z-index: 1;
+}
+
+
+    .experience-title {
+      font-weight: bold;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+    .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .social-links a {
+    font-size: 2rem;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .social-links a:hover {
+    color: #00ffff;
+    transform: scale(1.3) rotate(4deg);
+  }
+
+  .social-links a::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: #ccc;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .social-links a:hover::after {
+    opacity: 1;
+  }
+
+  /* Individual icon colors on hover (optional, para mais estilo) */
+  .social-links a.youtube:hover { color: #FF0000; }
+  .social-links a.github:hover { color: #999; }
+  .social-links a.discord:hover { color: #7289da; }
+  .social-links a.email:hover { color: #ffc107; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SAGA</h1>
+  </header>
+
+  <div class="button-container">
+    <button onclick="showContent('content1')" class="btn btn-outline-primary">About me</button>
+    <button onclick="showContent('content2')" class="btn btn-outline-primary">Projects</button>
+    <button onclick="showContent('content3')" class="btn btn-outline-primary">Skills</button>
+  </div>
+
+  <!-- INÍCIO DE #content1 -->
+<div id="content1" class="content">
+  <!-- About Me Título -->
+  <h1><span class="maintitle">✦ WHO AM I</span></h1>
+
+  <div><img src="/porftolioCircle.gif" alt="" width="500" /></div>
+
+  <div class="container text-center">
+    <h2>Hello, I am <span class="neon-name">Armando</span>,</h2>
+    <div class="typing-container">
+      <p id="typed-text"></p>
+    </div>
+  </div>
+
+  <!-- Redes Sociais -->
+  <div class="social-links">
+    <a href="https://www.youtube.com/@gusagarma369" class="youtube" target="_blank" data-label="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://github.com/gusagarma" class="github" target="_blank" data-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://discord.com/users/gusagarma" class="discord" target="_blank" data-label="Discord">
+      <i class="fab fa-discord"></i>
+    </a>
+    <a href="mailto:gusagarma@gmail.com" class="email" target="_blank" data-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <br> My professional journey is marked by dedication to visual arts, where I delved into drawing, sculpting, 3D modeling, animation, and motion design. Simultaneously, I immersed myself in the realm of technologies for user-company interaction, crafting front-end interfaces that blend aesthetics and functionality exceptionally.
+      <br><br>
+      With a profound understanding of data processing and back-end development, I seamlessly connect user experience to company services efficiently and robustly. My approach harmonizes visual beauty with technical solidity, yielding comprehensive and integrated solutions.
+    </div>
+  </div>
+
+  <!-- SEÇÃO DE EXPERIÊNCIAS / COLABS -->
+  <div class="container text-center mt-5">
+    <h2 class="experience-title maintitle">✦ EXPERIENCE</h2>
+    <div class="row justify-content-center">
+      <!-- Card - Bosphorus Games -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <div class="card shadow-sm border-0 p-3 experience-card" data-toggle="modal" data-target="#projectModalBosphorus" style="cursor: pointer;">
+          <img src="logos/bosphorus-logo-white.png" class="card-img-top img-fluid" alt="Bosphorus Games logo" style="max-height: 100px; object-fit: contain;">
+        </div>
+      </div>
+
+      <!-- Card - Mardonpol -->
+      <div class="col-6 col-sm-4 col-md-3 mb-4">
+        <a href="#" data-toggle="modal" data-target="#projectModalMardonpol">
+          <div class="card shadow-sm border-0 p-3 experience-card">
+            <img src="logos/Mardonpol-Logo-w-PNG-pjp003gok9pypn09x396amjqofymtpfnl9wkonnr40.png" class="card-img-top img-fluid" alt="Empresa 2 logo" style="max-height: 100px; object-fit: contain;">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL - Bosphorus -->
+  <div class="modal fade" id="projectModalBosphorus" tabindex="-1" role="dialog" aria-labelledby="modalLabelBosphorus" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content text-white" style="background-color: #2c313a;">
+        <div class="modal-header border-0 d-flex justify-content-between align-items-center w-100">
+          <div class="w-100 text-center">
+            <h5 class="modal-title">Tech Contribution</h5>
+          </div>
+          <button type="button" class="close text-white position-absolute" style="right: 1rem;" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Company:</strong> Bosphorus Games</p>
+          <p><strong>Project:</strong>
+            <span class="text-warning font-weight-bold">Planet Extincter</span>
+            <span class="badge badge-secondary ml-2 align-middle">UNRELEASED</span>
+          </p>
+          <p><strong>Role:</strong> Backend Developer — procedural generation, AI systems, VFX creation & integration, shader development, and Spine animation integration</p>
+          <a href="https://bosphorusgames.com/" class="btn btn-outline-light mt-2" target="_blank">Visit company website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL - Mardonpol -->
+  <div class="modal fade" id="projectModalMardonpol" tabindex="-1" role="dialog" aria-labelledby="modalLabelMardonpol" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content text-white" style="background-color: #2c313a;">
+        <div class="modal-header border-0 d-flex justify-content-between align-items-center w-100">
+          <div class="w-100 text-center">
+            <h5 class="modal-title">Collaboration</h5>
+          </div>
+          <button type="button" class="close text-white position-absolute" style="right: 1rem;" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Company:</strong> Mardonpol Inc</p>
+          <p><strong>Project:</strong> 
+            <a href="https://store.steampowered.com/app/1713350/Project_Castaway/" 
+               target="_blank" 
+               class="text-primary fw-bold text-decoration-underline">
+              Project Castaway
+            </a>
+          </p>
+          <p><strong>Role:</strong> Backend Developer — system architecture & integrations</p>
+          <a href="https://mardonpol.com/" class="btn btn-outline-light mt-2" target="_blank">Visit company website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<h1><span class="maintitle">✦ PLAY NOW!</span></h1>
+<a href="https://waizudev.itch.io/thedarkbeacon" target="_blank" class="game-link">
+  <img
+    src="https://img.itch.zone/aW1nLzExOTQ1OTQwLnBuZw==/original/xxAQsn.png"
+    alt="Thumbnail do jogo"
+    class="game-thumbnail"
+    style="width: 30%;" />
+</a>
+
+</div>
+<!-- FIM DE #content1 -->
+
+  
+  
+  
+  
+  
+  
+          
+       
+
+      </div>
+    </div>
+  </div>
+
+  <div id="content2" class="content">
+    <h1><u class="maintitle">Projects</u></h1>
+    <div class="carousel-container">
+      <div class="projects-carousel" id="projects-carousel">
+        <!-- Os projetos serão adicionados aqui dinamicamente -->
+      </div>
+    </div>
+  </div>
+
+  <div id="content3" class="content text-light" style="perspective: 1000px;">
+    <h1><u class="maintitle">Skills</u></h1>
+    <div class="skills-grid">
+  
+      <!-- Programming -->
+      <div class="skill-card" data-category="code">
+        <h3><i class="fas fa-code"></i> Programming</h3>
+        <p>C# · JavaScript · TypeScript · PHP · Python · Node.js · Laravel · FastAPI · React · Vue · Next.js · WebSockets · GraphQL · PWA · Service Workers.</p>
+      </div>
+  
+      <!-- Game Development -->
+      <div class="skill-card" data-category="gamedev">
+        <h3><i class="fas fa-gamepad"></i> Game Development</h3>
+        <p>Unity (C#) · Unreal Engine (Blueprints & C++) · Systems architecture · Physics · Input · Audio · Optimization.</p>
+      </div>
+  
+      <!-- 3D & Visuals -->
+      <div class="skill-card" data-category="3d">
+        <h3><i class="fas fa-cube"></i> 3D & Visuals</h3>
+        <p>Blender · Maya · Substance · Rigging · Animation · PBR · Shader Graph · VFX · GLTF/GLB pipelines.</p>
+      </div>
+  
+      <!-- Backend & DevOps -->
+      <div class="skill-card" data-category="devops">
+        <h3><i class="fas fa-server"></i> Backend & DevOps</h3>
+        <p>PostgreSQL · MongoDB · Redis · Docker · AWS · CI/CD · Linux · Firebase · RabbitMQ · Webhooks · Git.</p>
+      </div>
+  
+      <!-- Security -->
+      <div class="skill-card" data-category="infra">
+        <h3><i class="fas fa-shield-alt"></i> Security & Infrastructure</h3>
+        <p>JWT · OAuth2 · AES-256 · WebRTC · ElasticSearch · Load balancing · Failover · Monitoring.</p>
+      </div>
+  
+      <!-- Quality & Testing -->
+      <div class="skill-card" data-category="qa">
+        <h3><i class="fas fa-vial"></i> Testing & Quality</h3>
+        <p>Jest · Mocha · PyTest · PHPUnit · Selenium · TDD · BDD · Code review · Integration tests.</p>
+      </div>
+  
+      <!-- Discipline -->
+      <div class="skill-card full" data-category="life">
+        <h3><i class="fas fa-fire-alt"></i> Discipline & Workflow</h3>
+        <p>My workflow is powered by discipline: daily physical training, tight organization, productive cycles, and relentless performance. This reflects directly in the focus and quality I deliver, even on the most complex and demanding projects.</p>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+  
+
+  <footer>
+    <p>&copy;SagaDev</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
