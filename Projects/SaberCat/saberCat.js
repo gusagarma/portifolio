@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // Criar a cena
 const scene = new THREE.Scene();
@@ -30,23 +30,23 @@ document.body.appendChild(renderer.domElement);
 const ambientLight = new THREE.AmbientLight(0x808080);
 scene.add(ambientLight);
 
-const leftLight = new THREE.PointLight(0xffffff, 5);
+const leftLight = new THREE.PointLight(0xffffff, 50);
 leftLight.position.set(-5, 0, 5);
 scene.add(leftLight);
 
-const rightLight = new THREE.PointLight('#ffe4e2', 25);
+const rightLight = new THREE.PointLight('#ffe4e2', 100);
 rightLight.position.set(5, 0, 5);
 scene.add(rightLight);
 
 
 // Carregar o modelo 3D
 const loaderModel = new GLTFLoader();
-loaderModel.load('RedRose.glb', function(gltf) {
+loaderModel.load('Saber.glb', function(gltf) {
     const model = gltf.scene;
 
     // Ajustar a posição e escala do modelo
     model.position.set(0, 0, 0);
-    model.scale.set(0.1, 0.1, 0.1);
+    model.scale.set(1.0, 1.0, 1.0);
 
 
     scene.add(model);
