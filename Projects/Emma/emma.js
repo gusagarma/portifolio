@@ -113,6 +113,7 @@ loaderModel.load('emma.glb', function(gltf) {
             fireAction = mixer.clipAction(fireClip);
             fireAction.setLoop(LoopOnce);
             fireAction.clampWhenFinished = true;
+            fireAction.timeScale = 2;
         }
     }
 
